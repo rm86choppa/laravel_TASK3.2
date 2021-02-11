@@ -1,0 +1,26 @@
+
+
+.filtering_radio {
+    margin-bottom: 10px;
+}
+
+.contents table {
+    text-align: left;
+    margin-right: 20px;
+}
+
+.contents table th {
+    background-color: aqua;
+}
+
+.contents table td {
+    padding: 5px 15px 5px 5px; 
+}
+
+.state_btn {
+    margin-right: 5px;
+}
+
+.filtering_radio button {
+    display: none;
+}
