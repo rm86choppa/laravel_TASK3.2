@@ -34,4 +34,17 @@ class TodoController extends Controller
 
         return redirect()->action('TodoController@index');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request, $id)
+    {
+        ToDo::find($id)->delete();
+
+        return redirect()->action('TodoController@index');
+    }
 }

@@ -26,7 +26,11 @@
                                 @else
                                     <button type="submit" class="state_btn" name="state" value="完了">完了</button>
                                 @endif
-                                <button type="submit" class="delete_btn" name="delete" value="">削除</button>
+                                <form class="contents_Form" action="{{ url('todo/'.$item->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete_btn" name="delete">削除</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
