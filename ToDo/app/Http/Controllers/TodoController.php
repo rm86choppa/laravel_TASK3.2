@@ -32,7 +32,7 @@ class TodoController extends Controller
         unset($items['_token']);
         $todo->fill($items)->save();
 
-        return redirect()->action('TodoController@index');
+        return redirect('todo');
     }
 
     /**
@@ -41,10 +41,10 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
         ToDo::find($id)->delete();
 
-        return redirect()->action('TodoController@index');
+        return redirect('todo');
     }
 }
