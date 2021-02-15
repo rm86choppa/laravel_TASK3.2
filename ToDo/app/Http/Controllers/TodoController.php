@@ -47,4 +47,24 @@ class TodoController extends Controller
 
         return redirect('todo');
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //DBにコメントを追加
+        $item = $request->all();
+        $toDo = ToDo::find($id);
+        unset($item['_token']);
+        unset($item['_method']);
+        $toDo->fill($item)->save();
+
+        return redirect('todo');
+        
+    }
 }
