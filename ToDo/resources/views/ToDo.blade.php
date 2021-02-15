@@ -22,25 +22,11 @@
                             <td>{{$item->comment}}</td>
                             <td>
                                 @if ($item->state === 0)
-                                <form class="working_state_Form" action="{{ url('todo/'.$item->id) }}" method="post">
-                                    @csrf
-                                    @method('PUT')
                                     <button type="submit" class="state_btn" name="state" value="作業中">作業中</button>
-                                    <input type="hidden" name='state' class="state" value="1">
-                                </form>
                                 @else
-                                <form class="done_state_Form" action="{{ url('todo/'.$item->id) }}" method="post">
-                                    @csrf
-                                    @method('PUT')
                                     <button type="submit" class="state_btn" name="state" value="完了">完了</button>
-                                    <input type="hidden" name='state' class="state" value="0">
-                                </form>
                                 @endif
-                                <form class="contents_Form" action="{{ url('todo/'.$item->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="delete_btn" name="delete">削除</button>
-                                </form>
+                                <button type="submit" class="delete_btn" name="delete" value="">削除</button>
                             </td>
                         </tr>
                     @endforeach

@@ -32,39 +32,6 @@ class TodoController extends Controller
         unset($items['_token']);
         $todo->fill($items)->save();
 
-        return redirect('todo');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        ToDo::find($id)->delete();
-
-        return redirect('todo');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //DBにコメントを追加
-        $item = $request->all();
-        $toDo = ToDo::find($id);
-        unset($item['_token']);
-        unset($item['_method']);
-        $toDo->fill($item)->save();
-
-        return redirect('todo');
-        
+        return redirect()->action('TodoController@index');
     }
 }
