@@ -32,6 +32,19 @@ class TodoController extends Controller
         unset($items['_token']);
         $todo->fill($items)->save();
 
-        return redirect()->action('TodoController@index');
+        return redirect('todo');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        ToDo::find($id)->delete();
+
+        return redirect('todo');
     }
 }
