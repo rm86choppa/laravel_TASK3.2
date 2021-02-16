@@ -58,12 +58,8 @@ class TodoController extends Controller
     public function update(Request $request, $id)
     {
         //DBにコメントを追加
-        $item = $request->all();
-        $toDo = ToDo::find($id);
-        unset($item['_token']);
-        unset($item['_method']);
-        $toDo->fill($item)->save();
-
+        $toDo = ToDo::find($id)->update(['state' => $request->state]);
+        
         return redirect('todo');
         
     }
