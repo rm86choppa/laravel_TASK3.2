@@ -131,17 +131,19 @@ function filtering(e) {
       });
       break;
   }
-} //ラジオボタン全て取得
+}
 
-
-var radios = document.getElementsByName('select'); //ラジオボタンの要素をループでid取得しそれぞれにイベントリスナーを登録、クリック監視
-
-radios.forEach(function (radio) {
-  var radio_type = radio.id;
-  radio.addEventListener('click', {
-    type: radio_type,
-    handleEvent: filtering
-  });
+document.getElementById('all_radio').addEventListener('click', {
+  type: 'all',
+  handleEvent: filtering
+});
+document.getElementById('working_radio').addEventListener('click', {
+  type: 'working',
+  handleEvent: filtering
+});
+document.getElementById('done_radio').addEventListener('click', {
+  type: 'done',
+  handleEvent: filtering
 });
 
 /***/ }),

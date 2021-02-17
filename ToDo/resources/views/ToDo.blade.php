@@ -11,9 +11,9 @@
             <h1>ToDoリスト</h1>
                 <div class="filtering_radio">
                     <!-- jsファイルでラジオボタン押下で絞り込み -->
-                    <label><input type="radio" id="all" name="select" value="all" checked>すべて</label>
-                    <label><input type="radio" id="working" name="select" value="working">作業中</label>
-                    <label><input type="radio" id="done" name="select" value="done">完了</label>
+                    <label><input type="radio" id="all_radio" name="select" value="0" checked>すべて</label>
+                    <label><input type="radio" id="working_radio" name="select" value="1">作業中</label>
+                    <label><input type="radio" id="done_radio" name="select" value="2">完了</label>
                 </div>
             <div class="contents">
                 <table id="table" class="table" border=1>
