@@ -1,7 +1,7 @@
-var table = document.getElementById('table');
-var tr_array = table.querySelectorAll('tr');
-var done_array = table.querySelectorAll('#done');
-var working_array = table.querySelectorAll('#working');
+const table = document.getElementById('table');
+const tr_array = table.querySelectorAll('tr');
+const done_array = table.querySelectorAll('#done');
+const working_array = table.querySelectorAll('#working');
 
 function filtering(e) {
 
@@ -56,10 +56,10 @@ function filtering(e) {
 }
 
 //ラジオボタン全て取得
-var radios = document.getElementsByName('select');
+const radios = document.getElementsByName('select');
 
 //ラジオボタンの要素をループでid取得しそれぞれにイベントリスナーを登録、クリック監視
 radios.forEach(radio=>{
-    var radio_type = radio.id;
+    const radio_type = radio.id;
     radio.addEventListener('click', {type:radio_type, handleEvent: filtering})
 });
